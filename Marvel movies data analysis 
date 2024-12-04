@@ -1,0 +1,27 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+import statistics as st
+
+data = pd.read_csv("/Users/yuvashankarnarayana/Desktop/Marvel.csv")
+
+
+budget = data["Budget (in million $)"].tolist()
+WW = data["Worldwide Gross (in million $)"].tolist()
+domestic = data["Domestic Gross (in million $)"].tolist()
+imdb = data["IMDb (scored out of 10)"].tolist()
+movie_names = data["Title"].tolist()
+data['Release Date (DD-MM-YYYY)'] = pd.to_datetime(data['Release Date (DD-MM-YYYY)'], format='%Y-%m-%d %H:%M:%S')
+plt.xlabel("Domestic Gross (in million $")
+plt.ylabel("Worldwide Gross (in million $")
+#plt.plot(data['Release Date (DD-MM-YYYY)'], budget, marker='*', linestyle='-', color='r') 
+#plt.plot(budget,WW,marker=".",c="b")
+plt.scatter(domestic,WW,marker=".",c="b")
+plt.show()
+mean_budget = np.mean(budget)
+#print(mean_budget) = 229.5235 million $
+mode_imdb = st.mode(imdb)
+#print(mode_imdb) = 7.9
+mean_WW = np.mean(WW)
+# print(mean_WW) = 918.5647058823529 millions $
