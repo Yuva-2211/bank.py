@@ -24,4 +24,4 @@ mean_budget = np.mean(budget)
 mode_imdb = st.mode(imdb)
 #print(mode_imdb) = 7.9
 mean_WW = np.mean(WW)
-# print(mean_WW) = 918.5647058823529 millions $
+# print(mean_WW) = 918.5647058823529 millions 
